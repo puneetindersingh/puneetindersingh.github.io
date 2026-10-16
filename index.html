@@ -216,6 +216,12 @@ table.stats td.them { color: var(--dim); }
 .shot img { display: block; width: 100%; height: auto; }
 .shot:nth-child(2) { transform: translateY(18px); }
 .banner { border: var(--px) solid #000; box-shadow: 6px 6px 0 #000; width: 100%; display: block; height: auto; }
+.figs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 28px; }
+.figs.one { grid-template-columns: 1fr; max-width: 640px; margin-left: auto; margin-right: auto; }
+.figs a { display: block; border: var(--px) solid #000; box-shadow: 6px 6px 0 #000; background: #fff; }
+.figs img { display: block; width: 100%; height: auto; }
+.figs-label { font-family: var(--display); font-size: 9px; color: var(--dim); margin: 28px 0 -14px; }
+.popup { width: 300px; max-width: 100%; height: auto; border: var(--px) solid #000; box-shadow: 6px 6px 0 #000; flex: none; }
 
 /* terminal for robots tester */
 .term { background: #05050b; border: var(--px) solid #000; box-shadow: 6px 6px 0 #000; padding: 16px; font-size: 20px; }
@@ -224,7 +230,6 @@ table.stats td.them { color: var(--dim); }
 .ok { color: var(--green); } .no { color: var(--red); }
 
 .mini { display: flex; gap: 22px; align-items: center; }
-.mini img { width: 96px; height: 96px; image-rendering: pixelated; border: var(--px) solid #000; box-shadow: 4px 4px 0 #000; flex: none; }
 
 /* player 1 */
 .p1 { padding: 26px; margin-bottom: 40px; display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: center; }
@@ -245,7 +250,8 @@ body.party .sprite { animation: spin .6s steps(8) infinite; }
 body.party .toast { display: block; }
 
 @media (max-width: 860px) {
-  .grid2 { grid-template-columns: 1fr; }
+  .grid2, .figs { grid-template-columns: 1fr; }
+  .mini { flex-direction: column; align-items: flex-start; }
   .levels { grid-template-columns: repeat(2, 1fr); }
   .levels a:last-child { grid-column: span 2; }
   .p1 { grid-template-columns: 1fr; text-align: center; }
@@ -328,6 +334,11 @@ body.party .toast { display: block; }
         </table>
         <p class="caption">From the comparison in the project README. Screaming Frog paid has no URL limit and costs &pound;199 a year.</p>
       </div>
+    </div>
+    <p class="figs-label">SCREENSHOTS &middot; 100-PAGE TEST CRAWL OF BOOKS.TOSCRAPE.COM</p>
+    <div class="figs">
+      <a href="img/crawler-summary.png"><img src="img/crawler-summary.png" alt="Open SEO Crawler summary: issues grouped into errors, warnings and info with affected page counts" width="1440" height="900" loading="lazy"></a>
+      <a href="img/crawler-bots.png"><img src="img/crawler-bots.png" alt="Open SEO Crawler Bot Readability: what Googlebot, Bingbot, Applebot and AI crawlers each received" width="1440" height="900" loading="lazy"></a>
     </div>
   </section>
 
@@ -421,6 +432,10 @@ Disallow: /</pre>
         <div class="caption">Real output from the tester, trimmed. The full matrix covers 21 crawlers.</div>
       </div>
     </div>
+    <p class="figs-label">SCREENSHOT &middot; THE ALL-BOTS MATRIX</p>
+    <div class="figs one">
+      <a href="img/robots-matrix.png"><img src="img/robots-matrix.png" alt="robots.txt Tester all-bots matrix: 2 of 21 crawlers blocked, GPTBot and Google-Extended" width="1280" height="1332" loading="lazy"></a>
+    </div>
   </section>
 
   <!-- Bonus -->
@@ -430,7 +445,7 @@ Disallow: /</pre>
       <span class="score" data-repo="turn-off-ai-overviews-ads"></span>
     </div>
     <div class="mini">
-      <img src="img/serp-icon.png" alt="" width="128" height="128">
+      <img class="popup" src="img/serp-popup.png" alt="The extension popup: Hide AI Overviews and Hide Ads toggles" width="600" height="424" loading="lazy">
       <div>
         <h2 id="serp-h">Turn Off AI Overviews &amp; Ads</h2>
         <p>A tiny Chrome extension that hides Google's AI Overviews and ads from search results, before they paint, so there is no flash. Two toggles. Access to Google Search pages only, collects nothing.</p>
