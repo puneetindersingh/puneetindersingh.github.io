@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puneet Singh: Free SEO Tools</title>
+<meta name="description" content="Free, open-source SEO tools by Puneet Singh: Open SEO Crawler, SEO Side Panel for Chrome, Bulk AI CLI Connector for WordPress, a robots.txt tester and a Chrome extension that hides Google AI Overviews and ads.">
+<link rel="canonical" href="https://puneetindersingh.github.io/">
+<meta property="og:title" content="Puneet Singh: Free SEO Tools">
+<meta property="og:description" content="A crawler, a Chrome side panel, a WordPress plugin and two small extras. All free, no accounts, no tracking.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://puneetindersingh.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Cpath fill='%23ffd23f' d='M2 0h4v1H2zM1 1h6v1H1zM0 2h8v3H0zM1 5h6v1H1zM0 6h2v2H0zM6 6h2v2H6z'/%3E%3Cpath fill='%2312121f' d='M2 3h1v1H2zM5 3h1v1H5z'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://puneetindersingh.github.io/#person",
+      "name": "Puneet Singh",
+      "jobTitle": "SEO",
+      "url": "https://puneetindersingh.github.io/",
+      "sameAs": [
+        "https://github.com/puneetindersingh",
+        "https://au.linkedin.com/in/puneet-singh0"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Open SEO Crawler",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Linux, macOS, Windows",
+      "url": "https://github.com/puneetindersingh/open-seo-crawler",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://puneetindersingh.github.io/#person" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SEO Side Panel",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Chrome 114+",
+      "url": "https://chromewebstore.google.com/detail/seo-side-panel/npjfeaapfebfgkmcbikigoigojfhcbho",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://puneetindersingh.github.io/#person" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Bulk AI CLI Connector",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "WordPress",
+      "url": "https://wordpress.org/plugins/bulk-seo-meta-editor-for-ai-agents/",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://puneetindersingh.github.io/#person" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "robots.txt Tester",
+      "applicationCategory": "DeveloperApplication",
+      "url": "https://github.com/puneetindersingh/robots-txt-tester",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://puneetindersingh.github.io/#person" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Turn Off AI Overviews & Ads on Google",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Chrome",
+      "url": "https://github.com/puneetindersingh/turn-off-ai-overviews-ads",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://puneetindersingh.github.io/#person" }
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #12121f;
+  --bg2: #1b1b30;
+  --panel: #23233d;
+  --ink: #f4f1e6;
+  --dim: #a9a6c4;
+  --yellow: #ffd23f;
+  --red: #ff4f5e;
+  --green: #3ddc84;
+  --blue: #3fa9ff;
+  --pink: #ff7ad9;
+  --line: #000;
+  --px: 4px;
+  --display: "Press Start 2P", monospace;
+  --body: "VT323", monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 23px;
+  line-height: 1.3;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(63,169,255,.10), transparent 40%),
+    radial-gradient(circle at 85% 60%, rgba(255,122,217,.08), transparent 45%);
+}
+/* CRT scanlines over everything */
+body::after {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(to bottom, rgba(0,0,0,.18) 0 2px, transparent 2px 4px);
+  z-index: 50;
+}
+a { color: var(--blue); }
+a:focus-visible, button:focus-visible { outline: var(--px) dashed var(--yellow); outline-offset: 4px; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+/* starfield */
+.stars { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+.stars i { position: absolute; width: 3px; height: 3px; background: var(--ink); opacity: .5; animation: twinkle 2.4s steps(2) infinite; }
+@keyframes twinkle { 50% { opacity: .1; } }
+
+/* top bar */
+.hud {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+  font-family: var(--display); font-size: 11px; letter-spacing: 1px;
+  padding: 18px 0; color: var(--dim);
+}
+.hud b { color: var(--ink); font-weight: 400; }
+.hud nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.hud nav a { color: var(--dim); text-decoration: none; }
+.hud nav a:hover { color: var(--yellow); }
+
+/* hero */
+.hero { text-align: center; padding: 48px 0 40px; }
+.sprite { width: 128px; height: 128px; image-rendering: pixelated; margin: 0 auto 26px; display: block; animation: bob 1s steps(2) infinite; }
+@keyframes bob { 50% { transform: translateY(-6px); } }
+.hero h1 {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(22px, 5.4vw, 52px); line-height: 1.35; margin: 0 0 22px;
+  color: var(--yellow);
+  text-shadow: var(--px) var(--px) 0 var(--red), calc(var(--px)*2) calc(var(--px)*2) 0 #000;
+}
+.hero p { max-width: 680px; margin: 0 auto 14px; font-size: 27px; color: var(--ink); }
+.hero p.small { font-size: 22px; color: var(--dim); }
+.press {
+  display: inline-block; margin-top: 26px;
+  font-family: var(--display); font-size: 14px; color: var(--ink); text-decoration: none;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* pixel box */
+.box {
+  background: var(--panel);
+  border: var(--px) solid var(--line);
+  box-shadow:
+    inset calc(var(--px) * -1) calc(var(--px) * -1) 0 rgba(0,0,0,.45),
+    inset var(--px) var(--px) 0 rgba(255,255,255,.12),
+    calc(var(--px)*2) calc(var(--px)*2) 0 #000;
+}
+.btn {
+  display: inline-block; font-family: var(--display); font-size: 11px; line-height: 1.4;
+  padding: 14px 16px; text-decoration: none; color: #12121f; background: var(--yellow);
+  border: var(--px) solid #000;
+  box-shadow: inset -4px -4px 0 rgba(0,0,0,.3), inset 4px 4px 0 rgba(255,255,255,.4), 4px 4px 0 #000;
+  transition: transform .05s;
+}
+.btn:hover { transform: translate(-2px,-2px); box-shadow: inset -4px -4px 0 rgba(0,0,0,.3), inset 4px 4px 0 rgba(255,255,255,.4), 6px 6px 0 #000; }
+.btn:active { transform: translate(4px,4px); box-shadow: inset -4px -4px 0 rgba(0,0,0,.3), inset 4px 4px 0 rgba(255,255,255,.4), 0 0 0 #000; }
+.btn.alt { background: var(--ink); }
+.btns { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 22px; }
+
+/* level select */
+.select-title {
+  font-family: var(--display); font-weight: 400; font-size: clamp(14px, 2.6vw, 20px);
+  text-align: center; margin: 40px 0 26px; color: var(--ink);
+}
+.select-title span { color: var(--green); }
+.levels { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 70px; }
+.levels a {
+  display: block; padding: 16px 10px; text-align: center; text-decoration: none; color: var(--ink);
+  font-family: var(--display); font-size: 10px; line-height: 1.7;
+}
+.levels a .num { display: block; font-size: 16px; margin-bottom: 10px; }
+.levels a:hover { background: var(--bg2); color: var(--yellow); }
+.levels a:hover::before { content: "\25B6"; position: absolute; margin-left: -22px; color: var(--yellow); }
+
+/* tool sections */
+.level { padding: 26px; margin-bottom: 60px; scroll-margin-top: 20px; }
+.level-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+.tag { font-family: var(--display); font-size: 10px; padding: 8px 10px; border: 3px solid #000; color: #12121f; }
+.score { font-family: var(--display); font-size: 10px; color: var(--yellow); }
+.level h2 { font-family: var(--display); font-weight: 400; font-size: clamp(16px, 3vw, 26px); line-height: 1.4; margin: 0 0 14px; }
+.level p { margin: 0 0 12px; }
+.grid2 { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: start; }
+ul.loot { list-style: none; padding: 0; margin: 14px 0 0; }
+ul.loot li { padding-left: 30px; position: relative; margin-bottom: 6px; }
+ul.loot li::before { content: ""; position: absolute; left: 4px; top: 8px; width: 12px; height: 12px; background: var(--c, var(--yellow)); box-shadow: 3px 3px 0 #000; }
+
+/* stats table */
+table.stats { width: 100%; border-collapse: collapse; font-size: 21px; background: var(--bg); border: var(--px) solid #000; }
+table.stats th, table.stats td { padding: 7px 10px; border-bottom: 2px dashed #3a3a5c; text-align: left; }
+table.stats th { font-family: var(--display); font-size: 9px; color: var(--dim); font-weight: 400; }
+table.stats td.us { color: var(--green); }
+table.stats td.them { color: var(--dim); }
+.caption { font-size: 18px; color: var(--dim); margin-top: 8px; }
+
+/* screenshots */
+.shots { display: flex; gap: 14px; justify-content: center; }
+.shot { border: var(--px) solid #000; box-shadow: 6px 6px 0 #000; background: #fff; width: 31%; max-width: 200px; }
+.shot img { display: block; width: 100%; height: auto; }
+.shot:nth-child(2) { transform: translateY(18px); }
+.banner { border: var(--px) solid #000; box-shadow: 6px 6px 0 #000; width: 100%; display: block; height: auto; }
+
+/* terminal for robots tester */
+.term { background: #05050b; border: var(--px) solid #000; box-shadow: 6px 6px 0 #000; padding: 16px; font-size: 20px; }
+.term .file { color: var(--dim); white-space: pre; overflow-x: auto; margin: 0 0 12px; font-family: var(--body); font-size: 20px; }
+.term .row { display: flex; justify-content: space-between; gap: 10px; border-bottom: 1px dotted #26263f; }
+.ok { color: var(--green); } .no { color: var(--red); }
+
+.mini { display: flex; gap: 22px; align-items: center; }
+.mini img { width: 96px; height: 96px; image-rendering: pixelated; border: var(--px) solid #000; box-shadow: 4px 4px 0 #000; flex: none; }
+
+/* player 1 */
+.p1 { padding: 26px; margin-bottom: 40px; display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: center; }
+.p1 h2 { font-family: var(--display); font-weight: 400; font-size: 18px; margin: 0 0 12px; color: var(--pink); }
+.p1 .sprite { margin: 0; width: 96px; height: 96px; }
+
+footer { text-align: center; padding: 20px 0 50px; font-family: var(--display); font-size: 10px; color: var(--dim); line-height: 2; }
+.coin { color: var(--yellow); }
+
+/* konami mode */
+body.party .sprite { animation: spin .6s steps(8) infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%);
+  font-family: var(--display); font-size: 11px; padding: 14px 18px; background: var(--yellow); color: #12121f;
+  border: var(--px) solid #000; box-shadow: 4px 4px 0 #000; z-index: 60; display: none; max-width: calc(100% - 32px); text-align: center;
+}
+body.party .toast { display: block; }
+
+@media (max-width: 860px) {
+  .grid2 { grid-template-columns: 1fr; }
+  .levels { grid-template-columns: repeat(2, 1fr); }
+  .levels a:last-child { grid-column: span 2; }
+  .p1 { grid-template-columns: 1fr; text-align: center; }
+  .p1 .sprite { margin: 0 auto; }
+  .p1 .btns { justify-content: center; }
+}
+@media (max-width: 480px) {
+  body { font-size: 21px; }
+  .level { padding: 18px; }
+  .mini { flex-direction: column; align-items: flex-start; }
+  .hud { justify-content: center; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+<div class="stars" id="stars" aria-hidden="true"></div>
+
+<div class="wrap">
+  <header class="hud">
+    <div>1UP <b>PUNEET SINGH</b></div>
+    <nav aria-label="Main">
+      <a href="#levels">TOOLS</a>
+      <a href="https://github.com/puneetindersingh">GITHUB</a>
+      <a href="https://au.linkedin.com/in/puneet-singh0">LINKEDIN</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <svg class="sprite" id="hero-sprite" viewBox="0 0 16 16" shape-rendering="crispEdges" role="img" aria-label="Pixel crawler robot"></svg>
+    <h1>FREE SEO TOOLS<br>INSERT NO COIN</h1>
+    <p>I'm Puneet, an SEO. I build the tools I wish I had, then give them away. Five of them so far.</p>
+    <p class="small">No accounts. No API keys. No tracking. Most of them run on your own machine.</p>
+    <a class="press" href="#levels">&#9654; PRESS START</a>
+  </section>
+
+  <h2 class="select-title" id="levels">SELECT <span>LEVEL</span></h2>
+  <nav class="levels" aria-label="Tools">
+    <a class="box" href="#crawler"><span class="num" style="color:var(--green)">1-1</span>SEO CRAWLER</a>
+    <a class="box" href="#sidepanel"><span class="num" style="color:var(--blue)">1-2</span>CHROME SIDE PANEL</a>
+    <a class="box" href="#wordpress"><span class="num" style="color:var(--pink)">1-3</span>WORDPRESS PLUGIN</a>
+    <a class="box" href="#robots"><span class="num" style="color:var(--red)">1-4</span>ROBOTS.TXT TESTER</a>
+    <a class="box" href="#serp"><span class="num" style="color:var(--yellow)">BONUS</span>HIDE AI OVERVIEWS</a>
+  </nav>
+
+  <!-- 1-1 Crawler -->
+  <section class="level box" id="crawler" aria-labelledby="crawler-h">
+    <div class="level-head">
+      <span class="tag" style="background:var(--green)">WORLD 1-1 &middot; SELF-HOSTED</span>
+      <span class="score" data-repo="open-seo-crawler"></span>
+    </div>
+    <div class="grid2">
+      <div>
+        <h2 id="crawler-h">Open SEO Crawler</h2>
+        <p>A free Screaming Frog alternative you run on your own computer. Point it at a site and it walks every page looking for technical SEO problems. No URL cap, no account, no cloud.</p>
+        <p>It also checks what AI search sees. After a crawl it requests a sample of pages as Googlebot, Bingbot, GPTBot, PerplexityBot and friends, then flags any page a crawler gets blocked from, redirected away from, or handed a thinner version of.</p>
+        <ul class="loot" style="--c:var(--green)">
+          <li>Presets for 10 CMSs</li>
+          <li>Optional headless JavaScript rendering</li>
+          <li>XLSX export, plus an AI brief you can paste into any assistant</li>
+          <li>One-line install on Linux, macOS or Windows, updates itself daily</li>
+        </ul>
+        <div class="btns">
+          <a class="btn" href="https://github.com/puneetindersingh/open-seo-crawler">GET IT ON GITHUB</a>
+        </div>
+      </div>
+      <div>
+        <table class="stats">
+          <thead><tr><th>STAT</th><th>THIS</th><th>SF FREE</th></tr></thead>
+          <tbody>
+            <tr><td>URL limit</td><td class="us">Unlimited</td><td class="them">500</td></tr>
+            <tr><td>Price</td><td class="us">Free, MIT</td><td class="them">Free</td></tr>
+            <tr><td>Open source</td><td class="us">Yes</td><td class="them">No</td></tr>
+            <tr><td>Auto-update</td><td class="us">Daily</td><td class="them">Manual</td></tr>
+            <tr><td>CMS presets</td><td class="us">10 CMSs</td><td class="them">None</td></tr>
+          </tbody>
+        </table>
+        <p class="caption">From the comparison in the project README. Screaming Frog paid has no URL limit and costs &pound;199 a year.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1-2 Side panel -->
+  <section class="level box" id="sidepanel" aria-labelledby="sp-h">
+    <div class="level-head">
+      <span class="tag" style="background:var(--blue)">WORLD 1-2 &middot; CHROME</span>
+      <span class="score">CHROME WEB STORE</span>
+    </div>
+    <div class="grid2">
+      <div>
+        <h2 id="sp-h">SEO Side Panel</h2>
+        <p>A Chrome extension that stays open beside every page you visit and audits it from the page's own code. Every finding comes with the fix written next to it.</p>
+        <p>It answers two questions most SEO extensions skip: what Google actually gets from this URL, and what ChatGPT, Claude and Perplexity get, which is usually not the same thing.</p>
+        <ul class="loot" style="--c:var(--blue)">
+          <li>Titles and descriptions measured in pixels, not characters</li>
+          <li>Raw HTML next to the rendered page, so you see what AI crawlers miss</li>
+          <li>JSON-LD errors named by block and line</li>
+          <li>No account, no server, no AI</li>
+        </ul>
+        <div class="btns">
+          <a class="btn" href="https://chromewebstore.google.com/detail/seo-side-panel/npjfeaapfebfgkmcbikigoigojfhcbho">ADD TO CHROME</a>
+          <a class="btn alt" href="https://puneetindersingh.github.io/seo-side-panel/">MORE INFO</a>
+        </div>
+      </div>
+      <div class="shots">
+        <a class="shot" href="img/sidepanel-ui-summary.png"><img src="img/sidepanel-ui-summary.png" alt="SEO Side Panel summary page with fix, check and passed counts" width="400" height="900" loading="lazy"></a>
+        <a class="shot" href="img/sidepanel-ui-ai.png"><img src="img/sidepanel-ui-ai.png" alt="SEO Side Panel AI crawlers page" width="400" height="900" loading="lazy"></a>
+        <a class="shot" href="img/sidepanel-ui-links.png"><img src="img/sidepanel-ui-links.png" alt="SEO Side Panel links page with status codes" width="400" height="900" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1-3 WordPress -->
+  <section class="level box" id="wordpress" aria-labelledby="wp-h">
+    <div class="level-head">
+      <span class="tag" style="background:var(--pink)">WORLD 1-3 &middot; WORDPRESS</span>
+      <span class="score" data-repo="bulk-ai-cli-connector"></span>
+    </div>
+    <img class="banner" src="img/wp-banner.png" alt="Bulk AI CLI Connector: edit pages, SEO and schema with Claude, ChatGPT and MCP agents" width="1544" height="500" loading="lazy">
+    <div class="grid2" style="margin-top:26px">
+      <div>
+        <h2 id="wp-h">Bulk AI CLI Connector</h2>
+        <p>A free plugin on WordPress.org that lets Claude, ChatGPT, MCP agents and your own scripts read and rewrite a site's SEO in bulk over the REST API. There is no AI inside it and it makes no requests of its own. Each call signs in as a WordPress user and can only do what that user could do in wp-admin.</p>
+        <div class="btns">
+          <a class="btn" href="https://wordpress.org/plugins/bulk-seo-meta-editor-for-ai-agents/">GET THE PLUGIN</a>
+          <a class="btn alt" href="https://github.com/puneetindersingh/bulk-ai-cli-connector">SOURCE</a>
+        </div>
+      </div>
+      <ul class="loot" style="--c:var(--pink)">
+        <li>Yoast and Rank Math titles, descriptions, canonical and robots, up to 100 posts a call</li>
+        <li>Custom JSON-LD per post and per term, merged into the SEO plugin's graph</li>
+        <li>Elementor and Beaver Builder page copy, with undo and dry run</li>
+        <li>Redirects, image alt text by URL, sitemap cache flush</li>
+        <li>Bundled MCP server for Claude Desktop</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 1-4 Robots -->
+  <section class="level box" id="robots" aria-labelledby="rb-h">
+    <div class="level-head">
+      <span class="tag" style="background:var(--red)">WORLD 1-4 &middot; SELF-HOSTED</span>
+      <span class="score" data-repo="robots-txt-tester"></span>
+    </div>
+    <div class="grid2">
+      <div>
+        <h2 id="rb-h">robots.txt Tester</h2>
+        <p>Google retired its robots.txt Tester in 2023. This brings it back with proper RFC 9309 matching, and adds the bit the original never had: one click tests a URL against every well-known search and AI crawler.</p>
+        <p>Most free checkers use Python's built-in parser, which ignores <code>*</code> and <code>$</code> wildcards and happily says "allowed" when Googlebot would be blocked. This one follows Google's real rules: the most specific group wins, the longest pattern wins, ties go to Allow.</p>
+        <div class="btns">
+          <a class="btn" href="https://github.com/puneetindersingh/robots-txt-tester">GET IT ON GITHUB</a>
+        </div>
+      </div>
+      <div class="term" aria-label="Sample run of the all-bots matrix">
+<pre class="file">User-agent: *
+Disallow: /*?sessionid=
+
+User-agent: GPTBot
+Disallow: /blog/
+
+User-agent: Google-Extended
+Disallow: /</pre>
+        <div style="color:var(--yellow)">&gt; TEST /blog/post</div>
+        <div class="row"><span>Googlebot</span><span class="ok">ALLOWED</span></div>
+        <div class="row"><span>Bingbot</span><span class="ok">ALLOWED</span></div>
+        <div class="row"><span>GPTBot</span><span class="no">BLOCKED</span></div>
+        <div class="row"><span>ClaudeBot</span><span class="ok">ALLOWED</span></div>
+        <div class="row"><span>PerplexityBot</span><span class="ok">ALLOWED</span></div>
+        <div class="row"><span>Google-Extended</span><span class="no">BLOCKED</span></div>
+        <div class="caption">Real output from the tester, trimmed. The full matrix covers 21 crawlers.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bonus -->
+  <section class="level box" id="serp" aria-labelledby="serp-h">
+    <div class="level-head">
+      <span class="tag" style="background:var(--yellow)">BONUS STAGE &middot; CHROME</span>
+      <span class="score" data-repo="turn-off-ai-overviews-ads"></span>
+    </div>
+    <div class="mini">
+      <img src="img/serp-icon.png" alt="" width="128" height="128">
+      <div>
+        <h2 id="serp-h">Turn Off AI Overviews &amp; Ads</h2>
+        <p>A tiny Chrome extension that hides Google's AI Overviews and ads from search results, before they paint, so there is no flash. Two toggles. Access to Google Search pages only, collects nothing.</p>
+        <div class="btns">
+          <a class="btn" href="https://github.com/puneetindersingh/turn-off-ai-overviews-ads">GET IT ON GITHUB</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Player 1 -->
+  <section class="p1 box" aria-labelledby="p1-h">
+    <svg class="sprite" id="p1-sprite" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"></svg>
+    <div>
+      <h2 id="p1-h">PLAYER 1</h2>
+      <p>Puneet Singh. I do SEO for a living, and these tools come out of that work: the checks I kept running by hand, turned into something anyone can use. I also contribute to <a href="https://github.com/AgriciDaniel/claude-seo">claude-seo</a>, an open-source SEO skill set for Claude Code.</p>
+      <p>Found a bug or have an idea? Open an issue on the tool's GitHub page, or say hi on LinkedIn.</p>
+      <div class="btns">
+        <a class="btn alt" href="https://github.com/puneetindersingh">GITHUB</a>
+        <a class="btn alt" href="https://au.linkedin.com/in/puneet-singh0">LINKEDIN</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>GAME OVER? <span class="coin">CONTINUE</span> &#9654; <a href="#levels">PICK ANOTHER TOOL</a></div>
+    <div>&copy; <span id="yr">2026</span> PUNEET SINGH</div>
+  </footer>
+</div>
+
+<div class="toast" role="status">30 LIVES. CHEATER. &#9733;</div>
+
+<script>
+(function () {
+  // Pixel crawler robot, one character per pixel.
+  var map = [
+    "......YY........",
+    ".......Y........",
+    "....KKKKKKKK....",
+    "...KYYYYYYYYK...",
+    "...KYWWYYWWYK...",
+    "...KYWKYYWKYK...",
+    "...KYYYYYYYYK...",
+    "...KYYRRRRYYK...",
+    "....KKKKKKKK....",
+    "..KKBBBBBBBBKK..",
+    ".KBBKBBGGBBKBBK.",
+    ".KBBKBBGGBBKBBK.",
+    "..KKKBBBBBBKKK..",
+    "....KBBKKBBK....",
+    "...KKBK..KBKK...",
+    "...KKK....KKK..."
+  ];
+  var col = { Y: "#ffd23f", K: "#000", W: "#f4f1e6", R: "#ff4f5e", B: "#3fa9ff", G: "#3ddc84" };
+  var rects = "";
+  map.forEach(function (row, y) {
+    for (var x = 0; x < row.length; x++) {
+      var c = col[row[x]];
+      if (c) rects += '<rect x="' + x + '" y="' + y + '" width="1" height="1" fill="' + c + '"/>';
+    }
+  });
+  ["hero-sprite", "p1-sprite"].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.innerHTML = rects;
+  });
+
+  // Starfield
+  var s = document.getElementById("stars"), frag = "";
+  for (var i = 0; i < 60; i++) {
+    frag += '<i style="left:' + (Math.random() * 100) + '%;top:' + (Math.random() * 100) + '%;animation-delay:' + (Math.random() * 2.4).toFixed(2) + 's"></i>';
+  }
+  s.innerHTML = frag;
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  // Live GitHub stars as a hi-score. Nothing shows if the API call fails.
+  document.querySelectorAll("[data-repo]").forEach(function (el) {
+    fetch("https://api.github.com/repos/puneetindersingh/" + el.dataset.repo)
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (d && typeof d.stargazers_count === "number" && d.stargazers_count > 0) {
+          el.textContent = "HI-SCORE " + String(d.stargazers_count).padStart(6, "0") + " ★";
+        }
+      })
+      .catch(function () {});
+  });
+
+  // Konami code
+  var code = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"], pos = 0;
+  document.addEventListener("keydown", function (e) {
+    pos = (e.key === code[pos]) ? pos + 1 : (e.key === code[0] ? 1 : 0);
+    if (pos === code.length) {
+      pos = 0;
+      document.body.classList.add("party");
+      setTimeout(function () { document.body.classList.remove("party"); }, 4000);
+    }
+  });
+})();
+</script>
+</body>
+</html>
