@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Puneet Singh: Free SEO Tools</title>
-<meta name="description" content="Free, open-source SEO tools by Puneet Singh: Open SEO Crawler, SEO Side Panel for Chrome, Bulk AI CLI Connector for WordPress, a robots.txt tester and a Chrome extension that hides Google AI Overviews and ads.">
+<title>Puneet Singh: Head of SEO and Free SEO Tools</title>
+<meta name="description" content="Puneet Singh, Head of SEO at Mojo Dojo in Melbourne. Career, education and the free, open-source SEO tools he builds: Open SEO Crawler, SEO Side Panel for Chrome, Bulk AI CLI Connector for WordPress, a robots.txt tester and a Chrome extension that hides Google AI Overviews and ads.">
 <link rel="canonical" href="https://puneetindersingh.github.io/">
 <meta property="og:title" content="Puneet Singh: Free SEO Tools">
 <meta property="og:description" content="A crawler, a Chrome side panel, a WordPress plugin and two small extras. All free, no accounts, no tracking.">
@@ -22,8 +22,16 @@
       "@type": "Person",
       "@id": "https://puneetindersingh.github.io/#person",
       "name": "Puneet Singh",
-      "jobTitle": "SEO",
+      "jobTitle": "Head of SEO",
       "url": "https://puneetindersingh.github.io/",
+      "worksFor": { "@type": "Organization", "name": "Mojo Dojo" },
+      "homeLocation": { "@type": "Place", "name": "South Melbourne, Victoria, Australia" },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "RMIT University" },
+        { "@type": "CollegeOrUniversity", "name": "Punjab Technical University" }
+      ],
+      "knowsLanguage": ["English", "Hindi"],
+      "knowsAbout": ["Technical SEO", "AI search", "Information retrieval", "WordPress", "Schema markup"],
       "sameAs": [
         "https://github.com/puneetindersingh",
         "https://au.linkedin.com/in/puneet-singh0"
@@ -236,6 +244,35 @@ table.stats td.them { color: var(--dim); }
 .p1 h2 { font-family: var(--display); font-weight: 400; font-size: 18px; margin: 0 0 12px; color: var(--pink); }
 .p1 .sprite { margin: 0; width: 96px; height: 96px; }
 
+/* about */
+.about { padding: 26px; margin-bottom: 60px; scroll-margin-top: 20px; }
+.about h2 { font-family: var(--display); font-weight: 400; font-size: clamp(16px, 3vw, 26px); line-height: 1.4; margin: 0 0 14px; }
+.about h3 { font-family: var(--display); font-weight: 400; font-size: 12px; color: var(--yellow); margin: 34px 0 16px; letter-spacing: 1px; }
+.about p { margin: 0 0 12px; }
+.card { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items: start; }
+.statcard { background: var(--bg); border: var(--px) solid #000; box-shadow: 6px 6px 0 #000; padding: 16px; }
+.statcard .row { display: flex; justify-content: space-between; gap: 12px; border-bottom: 2px dashed #3a3a5c; padding: 6px 0; }
+.statcard .row:last-child { border-bottom: 0; }
+.statcard .k { font-family: var(--display); font-size: 9px; color: var(--dim); padding-top: 6px; }
+.statcard .v { text-align: right; }
+.quests { list-style: none; padding: 0; margin: 0; border-left: var(--px) dashed #3a3a5c; }
+.quests li { position: relative; padding: 0 0 22px 26px; }
+.quests li::before { content: ""; position: absolute; left: -10px; top: 6px; width: 14px; height: 14px; background: var(--c, var(--dim)); border: 3px solid #000; }
+.quests .when { font-family: var(--display); font-size: 9px; color: var(--dim); display: block; margin-bottom: 4px; }
+.quests .what { color: var(--ink); }
+.quests .what b { color: var(--c, var(--ink)); font-weight: 400; }
+.quests p { color: var(--dim); font-size: 21px; margin: 4px 0 0; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.item { background: var(--bg); border: var(--px) solid #000; box-shadow: 6px 6px 0 #000; padding: 14px 16px; }
+.item .when { font-family: var(--display); font-size: 9px; color: var(--dim); }
+.item b { display: block; font-weight: 400; color: var(--ink); margin: 6px 0 2px; }
+.item span { color: var(--dim); font-size: 21px; }
+
+/* typed class line */
+.hero p.typed-line { font-family: var(--display); font-size: clamp(11px, 2vw, 15px); color: var(--green); margin: 0 0 24px; min-height: 1.6em; }
+.typed-cursor { color: var(--green); }
+.unlock { display: inline-block; margin-left: 10px; color: #12121f; background: var(--green); padding: 2px 6px; font-size: 9px; visibility: hidden; }
+
 footer { text-align: center; padding: 20px 0 50px; font-family: var(--display); font-size: 10px; color: var(--dim); line-height: 2; }
 .coin { color: var(--yellow); }
 
@@ -254,13 +291,14 @@ body.party .toast { display: block; }
   .mini { flex-direction: column; align-items: flex-start; }
   .levels { grid-template-columns: repeat(2, 1fr); }
   .levels a:last-child { grid-column: span 2; }
+  .card, .cols { grid-template-columns: 1fr; }
   .p1 { grid-template-columns: 1fr; text-align: center; }
   .p1 .sprite { margin: 0 auto; }
   .p1 .btns { justify-content: center; }
 }
 @media (max-width: 480px) {
   body { font-size: 21px; }
-  .level { padding: 18px; }
+  .level, .about { padding: 18px; }
   .mini { flex-direction: column; align-items: flex-start; }
   .hud { justify-content: center; text-align: center; }
 }
@@ -277,6 +315,7 @@ body.party .toast { display: block; }
   <header class="hud">
     <div>1UP <b>PUNEET SINGH</b></div>
     <nav aria-label="Main">
+      <a href="#about">ABOUT</a>
       <a href="#levels">TOOLS</a>
       <a href="https://github.com/puneetindersingh">GITHUB</a>
       <a href="https://au.linkedin.com/in/puneet-singh0">LINKEDIN</a>
@@ -285,10 +324,66 @@ body.party .toast { display: block; }
 
   <section class="hero">
     <svg class="sprite" id="hero-sprite" viewBox="0 0 16 16" shape-rendering="crispEdges" role="img" aria-label="Pixel crawler robot"></svg>
-    <h1>FREE SEO TOOLS<br>INSERT NO COIN</h1>
-    <p>I'm Puneet, an SEO. I build the tools I wish I had, then give them away. Five of them so far.</p>
+    <h1 id="hero-h1"><span>FREE SEO TOOLS</span><br><span>INSERT NO COIN</span></h1>
+    <p class="typed-line" aria-hidden="true">&gt; <span id="typed"></span></p>
+    <p>I'm Puneet, Head of SEO at Mojo Dojo in Melbourne. I build the tools I wish I had, then give them away. Five of them so far.</p>
     <p class="small">No accounts. No API keys. No tracking. Most of them run on your own machine.</p>
     <a class="press" href="#levels">&#9654; PRESS START</a>
+  </section>
+
+
+  <!-- About -->
+  <section class="about box" id="about" aria-labelledby="about-h">
+    <div class="level-head">
+      <span class="tag" style="background:var(--pink)">PLAYER 1 &middot; CHARACTER SHEET</span>
+      <span class="score">SOUTH MELBOURNE, AU</span>
+    </div>
+    <div class="card">
+      <div>
+        <h2 id="about-h">About me</h2>
+        <p>I came to SEO from the engineering side. A computer science degree first, then a Master of IT at RMIT where I specialised in information retrieval. That meant reading the early Google ranking papers and writing my own little search engine with ranking factors I picked myself. Search has made sense to me as a system ever since.</p>
+        <p>After uni I built React plugins and dashboards for Qlik Sense at Cast Solutions. Then I joined Mojo Dojo in 2018 as a Digital Marketing Executive, running SEO, Google Ads, Meta and LinkedIn campaigns and talking to clients every week. SEO won. I've been doing it full time since 2019 and have led it as Head of SEO since 2022.</p>
+        <p>These days that means SEO strategy for a mix of clients, quarterly reviews with them, briefs for the content team, and a lot of technical work on crawling, indexing and site structure. A growing share of it is about how AI Overviews and LLMs pick what to cite. I also build our in-house SEO platform, and the free tools further down this page are the parts I could give away.</p>
+      </div>
+      <div class="statcard" aria-label="Quick stats">
+        <div class="row"><span class="k">CLASS</span><span class="v">Head of SEO</span></div>
+        <div class="row"><span class="k">GUILD</span><span class="v">Mojo Dojo</span></div>
+        <div class="row"><span class="k">XP</span><span class="v"><span data-count="8">8</span>+ years in SEO</span></div>
+        <div class="row"><span class="k">ORIGIN</span><span class="v">Computer science</span></div>
+        <div class="row"><span class="k">LANGUAGES</span><span class="v">English, Hindi</span></div>
+        <div class="row"><span class="k">TOOLS SHIPPED</span><span class="v"><span data-count="5">5</span>, all free</span></div>
+      </div>
+    </div>
+
+    <h3>QUEST LOG</h3>
+    <ol class="quests">
+      <li style="--c:var(--yellow)"><span class="when">NOV 2022 &middot; NOW</span><span class="what"><b>Head of SEO</b>, Mojo Dojo</span>
+        <p>Lead SEO strategy and delivery across the client portfolio. Quarterly performance reviews with clients, monthly SEO notes for account managers, content briefs, and technical SEO with a focus on AI Overviews and LLMs. Built our internal SEO platform: crawler, schema generator, brief builder and live GSC, GA4, Ahrefs and Keyword.com data. One of 12 contributors to claude-seo.</p></li>
+      <li style="--c:var(--green)"><span class="when">MAR 2019 &middot; NOV 2022</span><span class="what"><b>Senior SEO Specialist</b>, Mojo Dojo</span>
+        <p>Ran SEO end to end for a range of clients: technical audits, crawl and indexing fixes, keyword research, on-page work, link building and content.</p></li>
+      <li style="--c:var(--blue)"><span class="when">JUN 2018 &middot; MAR 2019</span><span class="what"><b>Digital Marketing Executive</b>, Mojo Dojo</span>
+        <p>Account manager and hands-on marketer. SEO plus paid campaigns on Google Ads, Meta and LinkedIn, and WordPress builds and hosting for clients.</p></li>
+      <li style="--c:var(--pink)"><span class="when">AUG 2017 &middot; JUN 2018</span><span class="what"><b>Qlik Sense Developer</b>, Cast Solutions</span>
+        <p>Custom Qlik Sense plugins in React, interactive dashboards, and data import plans pulling from spreadsheets and APIs.</p></li>
+      <li style="--c:var(--pink)"><span class="when">MAR 2017 &middot; JUL 2017</span><span class="what"><b>Project Management Intern</b>, Cast Solutions</span>
+        <p>Project managed a full custom website as my RMIT final year project: user logins, embedded Qlik dashboards for customers, and email features.</p></li>
+      <li style="--c:var(--red)"><span class="when">2013 &middot; 2015</span><span class="what"><b>Developer internships</b>, Chandigarh, India</span>
+        <p>Software engineering at BTES (bebo Education Services) with Java, JSP and PHP, and Java internships at Netmax Technologies and Infowiz Software Solution.</p></li>
+    </ol>
+
+    <div class="cols">
+      <div>
+        <h3>EDUCATION</h3>
+        <div class="item" style="margin-bottom:18px"><span class="when">2015 &middot; 2017</span><b>Master of IT, Computer Science</b><span>RMIT University, Melbourne. Specialised in information retrieval.</span></div>
+        <div class="item"><span class="when">2011 &middot; 2015</span><b>BTech, Computer Science</b><span>Punjab Technical University, India</span></div>
+      </div>
+      <div>
+        <h3 id="achievements">ACHIEVEMENTS UNLOCKED<span class="unlock" id="unlock-badge">+2</span></h3>
+        <div class="item" style="margin-bottom:18px"><span class="when">JUN 2024 &middot; SEMRUSH</span><b>Navigating On-Page and Technical SEO</b><span>A Semrush deep dive</span></div>
+        <div class="item"><span class="when">JUL 2022 &middot; HUBSPOT</span><b>SEO Certified</b><span>HubSpot Academy</span></div>
+      </div>
+    </div>
+
   </section>
 
   <h2 class="select-title" id="levels">SELECT <span>LEVEL</span></h2>
@@ -473,10 +568,17 @@ Disallow: /</pre>
   <footer>
     <div>GAME OVER? <span class="coin">CONTINUE</span> &#9654; <a href="#levels">PICK ANOTHER TOOL</a></div>
     <div>&copy; <span id="yr">2026</span> PUNEET SINGH</div>
+    <div>ANIMATED WITH <a href="https://github.com/greensock/GSAP">GSAP</a>, <a href="https://github.com/mattboldt/typed.js">TYPED.JS</a> AND <a href="https://github.com/catdad/canvas-confetti">CANVAS-CONFETTI</a></div>
   </footer>
 </div>
 
 <div class="toast" role="status">30 LIVES. CHEATER. &#9733;</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
 <script>
 (function () {
@@ -540,7 +642,85 @@ Disallow: /</pre>
     if (pos === code.length) {
       pos = 0;
       document.body.classList.add("party");
+      pixelConfetti(1);
       setTimeout(function () { document.body.classList.remove("party"); }, 4000);
+    }
+  });
+
+  // Square confetti in the page palette. Skipped when the library did not load.
+  function pixelConfetti(scale) {
+    if (!window.confetti || reduced) return;
+    confetti({
+      particleCount: Math.round(90 * scale), spread: 80, startVelocity: 38, gravity: 1.1, ticks: 160,
+      shapes: ["square"], scalar: 1.3, origin: { y: 0.7 },
+      colors: ["#ffd23f", "#ff4f5e", "#3ddc84", "#3fa9ff", "#ff7ad9"]
+    });
+  }
+
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Typewriter class line under the hero
+  if (window.Typed && !reduced) {
+    new Typed("#typed", {
+      strings: ["HEAD OF SEO", "TECHNICAL SEO", "TOOL BUILDER", "AI SEARCH WATCHER", "MELBOURNE, AU"],
+      typeSpeed: 55, backSpeed: 30, backDelay: 1600, loop: true, cursorChar: "_"
+    });
+  } else {
+    document.getElementById("typed").textContent = "HEAD OF SEO";
+  }
+
+  if (!window.gsap || reduced) return;
+  gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin);
+  var pixel = "steps(6)";
+
+  // Hero title decodes like a cartridge booting
+  gsap.utils.toArray("#hero-h1 span").forEach(function (line, i) {
+    gsap.to(line, { duration: 1.4, delay: i * 0.4, scrambleText: { text: line.textContent, chars: "01#$%&@?!", speed: 0.6, revealDelay: 0.3 } });
+  });
+
+  // Every panel drops in on scroll
+  gsap.utils.toArray(".level, .about, .p1").forEach(function (el) {
+    gsap.from(el, { y: 60, opacity: 0, duration: 0.6, ease: pixel, scrollTrigger: { trigger: el, start: "top 88%" } });
+  });
+  gsap.from(".levels a", {
+    y: -30, opacity: 0, duration: 0.4, ease: pixel, stagger: 0.08,
+    scrollTrigger: { trigger: ".levels", start: "top 90%" }
+  });
+
+  // Stat card: rows scramble in, numbers count up
+  gsap.utils.toArray(".statcard .v").forEach(function (v, i) {
+    var counter = v.querySelector("[data-count]");
+    if (counter) {
+      var n = { v: 0 }, end = +counter.dataset.count;
+      gsap.to(n, { v: end, duration: 1.2, ease: "steps(" + end + ")", delay: i * 0.12,
+        scrollTrigger: { trigger: ".statcard", start: "top 85%" },
+        onUpdate: function () { counter.textContent = Math.round(n.v); } });
+    } else {
+      gsap.to(v, { duration: 0.9, delay: i * 0.12, scrambleText: { text: v.textContent, chars: "upperCase", speed: 0.5 },
+        scrollTrigger: { trigger: ".statcard", start: "top 85%" } });
+    }
+  });
+
+  // Quest log: each quest slides in and its title decodes
+  gsap.utils.toArray(".quests li").forEach(function (li) {
+    var tl = gsap.timeline({ scrollTrigger: { trigger: li, start: "top 88%" } });
+    var title = li.querySelector(".what b");
+    tl.from(li, { x: -40, opacity: 0, duration: 0.45, ease: pixel })
+      .to(title, { duration: 0.6, scrambleText: { text: title.textContent, chars: "XO#", speed: 0.6 } }, 0.15);
+  });
+
+  // Education and achievement cards
+  gsap.utils.toArray(".about .item").forEach(function (el) {
+    gsap.from(el, { scale: 0.6, opacity: 0, duration: 0.4, ease: "steps(4)", scrollTrigger: { trigger: el, start: "top 90%" } });
+  });
+
+  // Achievements: one burst of confetti the first time they come into view
+  ScrollTrigger.create({
+    trigger: "#achievements", start: "top 70%", once: true,
+    onEnter: function () {
+      pixelConfetti(0.7);
+      gsap.fromTo("#unlock-badge", { autoAlpha: 0, y: 8 }, { autoAlpha: 1, y: 0, duration: 0.3, ease: "steps(3)", repeat: 3, yoyo: true,
+        onComplete: function () { gsap.set("#unlock-badge", { autoAlpha: 1 }); } });
     }
   });
 })();
